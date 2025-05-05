@@ -7,24 +7,38 @@
     <!-- חלק א' - כפתורי רדיו לשינוי כיוון הכותרת -->
     <script>
       function changeLeft() {
+        document.getElementById("h").style.textAlign="left";
         console.log("changeLeft");
       }
 
       function changeRight() {
+        document.getElementById("h").style.textAlign="right";
         console.log("changeRight");
       }
     </script>
     <!-- חלק ב' - העברת טקסט מתיבה לכפתור -->
     <script>
       function changeTxt() {
+        
+        document.getElementById("enter").value = document.getElementById("txt").value;
+        document.getElementById("txt").value="";
         console.log("changeTxt function called");
       }
     </script>
   </head>
   <body>
     <div id="container">
-      <div id="first"><!-- חלק א' - כפתורי רדיו לשינוי כיוון הכותרת  --></div>
-      <div id="second"><!-- חלק ב' - העברת טקסט מתיבה לכפתור  --></div>
+      <div id="first">
+      <h1 id="h">ברוכים הבאים</h1>
+      <input type="radio" value="r" name="dir" onclick="changeRight()"/> right
+      <br/>
+      <input type="radio" value="l" name="dir" onclick="changeLeft()"/> left
+      <!-- חלק א' - כפתורי רדיו לשינוי כיוון הכותרת  --></div>
+      <div id="second">
+        <input id="txt" type="text">
+        <br/>
+        <input id="enter" type="button" value="enter" onclick="changeTxt()">
+        <!-- חלק ב' - העברת טקסט מתיבה לכפתור  --></div>
     </div>
   </body>
 </html>
